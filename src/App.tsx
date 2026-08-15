@@ -356,6 +356,35 @@ export const App: React.FC = () => {
     }
   };
 
+  const handleEnterZenMode = async () => {
+    setIsZenMode(true);
+    try {
+      if (document.documentElement.requestFullscreen) {
+        await document.documentElement.requestFullscreen();
+      }
+      if (window.screen && window.screen.orientation && (window.screen.orientation as any).lock) {
+        // Force landscape on mobile devices
+        await (window.screen.orientation as any).lock('landscape');
+      }
+    } catch (error) {
+      console.warn('Orientation lock or fullscreen failed:', error);
+    }
+  };
+
+  const handleExitZenMode = async () => {
+    setIsZenMode(false);
+    try {
+      if (document.fullscreenElement && document.exitFullscreen) {
+        await document.exitFullscreen();
+      }
+      if (window.screen && window.screen.orientation && window.screen.orientation.unlock) {
+        window.screen.orientation.unlock();
+      }
+    } catch (error) {
+      console.warn('Exit orientation lock or fullscreen failed:', error);
+    }
+  };
+
   const totalModeDuration =
     mode === 'pomodoro'
       ? settings.pomodoroTime * 60
@@ -374,7 +403,7 @@ export const App: React.FC = () => {
           onToggleTimer={handleToggleTimer}
           onResetTimer={handleResetTimer}
           onSkipTimer={handleSkipTimer}
-          onExitZen={() => setIsZenMode(false)}
+          onExitZen={handleExitZenMode}
           activeTask={activeTask}
         />
       )}
@@ -389,7 +418,7 @@ export const App: React.FC = () => {
         onToggleAmbient={() => setIsAmbientOpen(true)}
         ambientSound={ambientSound}
         musicSound={musicSound}
-        onToggleZen={() => setIsZenMode(true)}
+        onToggleZen={handleEnterZenMode}
       />
 
       {/* Main Application Layout */}
