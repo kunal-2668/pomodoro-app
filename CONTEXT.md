@@ -5,7 +5,7 @@
 - Language: TypeScript
 - Styling: Plain CSS with Glassmorphism (Liquid Glass) Theme
 - Icons: Lucide React
-- Hosting: Vercel (planned)
+- Hosting: Vercel (Live)
 
 ## Features
 1. **Timer System**: 
@@ -31,11 +31,12 @@
    - Distraction-free full-screen overlay.
    - Custom HD video backgrounds (Live Wallpaper).
 
-## Recent UI Fixes
+## Recent UI Fixes & Setup
 - Aligned Timer Card and Task Section heights (`align-items: stretch`).
 - Adjusted mode tabs and task filters with translucent white (`rgba(255, 255, 255, 0.05)`) to match the glass style.
 - Placed "made by SpecialGrade x Gaddafi" watermark aligned to the left below the timer, styled with metallic gradient, wide letter-spacing, and mono font.
 - Implemented a custom noise filter (highpass + lowpass biquad filters) for natural-sounding Rain ambient audio, replacing the previous sine wave beeps.
+- Initialized Git repository, created robust `.gitignore` for testing logs and cache, and successfully removed unnecessary tracking artifacts.
 
 ## Deployment
 - Successfully hosted on Vercel.
