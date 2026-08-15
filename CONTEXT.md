@@ -37,5 +37,6 @@
 - Placed "made by SpecialGrade x Gaddafi" watermark aligned to the left below the timer, styled with metallic gradient, wide letter-spacing, and mono font.
 - Implemented a custom noise filter (highpass + lowpass biquad filters) for natural-sounding Rain ambient audio, replacing the previous sine wave beeps.
 
-## Upcoming
-- Deployment to Vercel.
+## Deployment
+- Successfully hosted on Vercel.
+- Connected to GitHub repository for automated CI/CD deployments.
