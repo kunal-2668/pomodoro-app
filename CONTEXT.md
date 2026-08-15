@@ -32,14 +32,13 @@
    - Custom HD video backgrounds (Live Wallpaper).
 
 ## Recent UI Fixes & Setup
-- Aligned Timer Card and Task Section heights (`align-items: stretch`).
-- Adjusted mode tabs and task filters with translucent white (`rgba(255, 255, 255, 0.05)`) to match the glass style.
-- Placed "made by SpecialGrade x Gaddafi" watermark aligned to the left below the timer, styled with metallic gradient, wide letter-spacing, and mono font.
-- Implemented a custom noise filter (highpass + lowpass biquad filters) for natural-sounding Rain ambient audio, replacing the previous sine wave beeps.
-- Initialized Git repository, created robust `.gitignore` for testing logs and cache, and successfully removed unnecessary tracking artifacts.
 - Fixed native HTML `<select>` option dropdown styling across the app (Settings, Category, etc.) to match the dark glassmorphism theme (`#0f172a` background).
+- Implemented full Mobile UI Optimization (Hamburger Menu, flex stacking, font/ring scaling).
+- Added Screen Orientation API integration to auto-force landscape and Fullscreen when entering Zen Mode on mobile.
+- Set up SEO metadata (`<meta>` tags for Title, Keywords, OpenGraph, Twitter Cards) and a `robots.txt` file for search engine indexing.
+- Configured heavy client-side browser caching (1-year immutable cache) for large video and audio files via `vercel.json` to eliminate loading times on repeat visits.
 
 ## Deployment & Tracking
-- Successfully hosted on Vercel.
+- Successfully hosted on Vercel (Live).
 - Connected to GitHub repository for automated CI/CD deployments.
 - Integrated `@vercel/analytics/react` component into `main.tsx` for production visitor tracking and page views.
