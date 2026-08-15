@@ -1,5 +1,5 @@
-import React from 'react';
-import { Settings as SettingsIcon, BarChart2, Volume2, Flame, Maximize2, Sparkles, Music } from 'lucide-react';
+import React, { useState } from 'react';
+import { Settings as SettingsIcon, BarChart2, Volume2, Flame, Maximize2, Sparkles, Music, Menu, X } from 'lucide-react';
 import { TimerMode, AmbientSoundType, MusicSoundType } from '../types';
 
 interface NavbarProps {
@@ -25,6 +25,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   musicSound,
   onToggleZen,
 }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   const isAmbientActive = ambientSound !== 'none';
   const isMusicActive = musicSound !== 'none';
   const isAudioActive = isAmbientActive || isMusicActive;
@@ -41,9 +43,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="brand-subtitle">Focus & Flow</span>
           </div>
         </div>
+        
+        {/* Mobile Hamburger Button */}
+        <button 
+          className="mobile-menu-btn" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
-      <div className="nav-right">
+      <div className={`nav-right ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         {/* Streak Pill */}
         <div className="nav-stat-pill" title="Current Daily Focus Streak">
           <Flame size={16} className="flame-icon" />
