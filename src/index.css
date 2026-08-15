@@ -865,6 +865,11 @@ body::after {
   font-size: 0.8rem;
 }
 
+.category-select option {
+  background-color: #0f172a;
+  color: var(--text-main);
+}
+
 .form-actions {
   display: flex;
   gap: 0.5rem;
