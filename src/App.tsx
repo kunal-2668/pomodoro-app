@@ -87,21 +87,34 @@ export const App: React.FC = () => {
     saveStats(stats);
   }, [stats]);
 
+  const endTimeRef = useRef<number | null>(null);
+
   // Countdown timer tick logic
   useEffect(() => {
     let interval: number | null = null;
+    
     if (isRunning && timeLeft > 0) {
+      // Calculate the exact end time once when the timer starts/resumes
+      if (!endTimeRef.current) {
+        endTimeRef.current = Date.now() + timeLeft * 1000;
+      }
+
       interval = window.setInterval(() => {
-        setTimeLeft(prev => prev - 1);
+        // Calculate remaining time precisely based on the system clock
+        const remaining = Math.max(0, Math.ceil((endTimeRef.current! - Date.now()) / 1000));
+        setTimeLeft(remaining);
       }, 1000);
     } else if (isRunning && timeLeft === 0) {
+      endTimeRef.current = null;
       handleTimerComplete();
+    } else if (!isRunning) {
+      endTimeRef.current = null;
     }
+    
     return () => {
       if (interval) clearInterval(interval);
     };
   }, [isRunning, timeLeft]);
-
   // Handle session completion
   const handleTimerComplete = () => {
     setIsRunning(false);
