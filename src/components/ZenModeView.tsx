@@ -65,6 +65,8 @@ export const ZenModeView: React.FC<ZenModeViewProps> = ({
           loop
           muted
           playsInline
+          preload="metadata"
+          disablePictureInPicture
           className="zen-bg-video"
         />
         <div className="zen-video-overlay" />
