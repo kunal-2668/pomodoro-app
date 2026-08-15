@@ -37,7 +37,9 @@
 - Placed "made by SpecialGrade x Gaddafi" watermark aligned to the left below the timer, styled with metallic gradient, wide letter-spacing, and mono font.
 - Implemented a custom noise filter (highpass + lowpass biquad filters) for natural-sounding Rain ambient audio, replacing the previous sine wave beeps.
 - Initialized Git repository, created robust `.gitignore` for testing logs and cache, and successfully removed unnecessary tracking artifacts.
+- Fixed native HTML `<select>` option dropdown styling across the app (Settings, Category, etc.) to match the dark glassmorphism theme (`#0f172a` background).
 
-## Deployment
+## Deployment & Tracking
 - Successfully hosted on Vercel.
 - Connected to GitHub repository for automated CI/CD deployments.
+- Integrated `@vercel/analytics/react` component into `main.tsx` for production visitor tracking and page views.
