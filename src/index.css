@@ -217,99 +217,6 @@ body::after {
   padding: 0.5rem;
 }
 
-/* Mobile Optimizations */
-@media (max-width: 600px) {
-  .app-container {
-    padding: 1rem;
-    gap: 1.25rem;
-  }
-  
-  .navbar {
-    flex-direction: column;
-    gap: 0;
-    align-items: stretch;
-  }
-  
-  .nav-left {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .mobile-menu-btn {
-    display: block;
-  }
-  
-  .nav-right {
-    display: none;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-top: 1rem;
-    margin-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-right.mobile-open {
-    display: flex;
-  }
-
-  .nav-stat-pill, .nav-btn {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.7rem;
-  }
-
-  .main-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  .timer-container, .task-section {
-    padding: 1.25rem;
-    height: auto;
-  }
-
-  .time-display {
-    font-size: 4rem;
-  }
-  
-  .svg-ring-container {
-    width: 250px;
-    height: 250px;
-  }
-
-  .watermark {
-    margin-top: 1.5rem;
-    font-size: 0.65rem;
-  }
-  
-  .dual-audio-layout {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .ambient-modal-overlay, .modal-overlay {
-    padding: 0.5rem;
-  }
-  
-  .modal-content, .ambient-modal {
-    padding: 1.25rem;
-    border-radius: var(--radius-lg);
-  }
-  
-  .zen-overlay {
-    padding: 1rem;
-  }
-  
-  .zen-clock {
-    font-size: 4.5rem;
-  }
-  
-  .mode-tabs {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
 
 .nav-right {
   display: flex;
@@ -1923,6 +1830,102 @@ select option {
   font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 600;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+  
+  .nav-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-right.mobile-open {
+    display: flex;
+  }
+
+  .nav-stat-pill, .nav-btn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .timer-container, .task-section {
+    padding: 1.25rem;
+    height: auto;
+  }
+
+  .time-display {
+    font-size: 4rem;
+  }
+  
+  .svg-ring-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .watermark {
+    margin-top: 1.5rem;
+    font-size: 0.65rem;
+  }
+  
+  .dual-audio-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .ambient-modal-overlay, .modal-overlay {
+    padding: 0.5rem;
+  }
+  
+  .modal-content, .ambient-modal {
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+  
+  .zen-overlay {
+    padding: 1rem;
+  }
+  
+  .zen-clock {
+    font-size: 4.5rem;
+  }
+  
+  .mode-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 
