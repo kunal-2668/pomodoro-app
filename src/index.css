@@ -865,7 +865,7 @@ body::after {
   font-size: 0.8rem;
 }
 
-.category-select option {
+select option {
   background-color: #0f172a;
   color: var(--text-main);
 }
